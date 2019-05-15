@@ -9,20 +9,20 @@ public final class StringBuffer extends Object {
 
 	// **** CONSTRUCTORS ****
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: No-arg Constructor 
+	   Description: Initializes a StringBuffer object with standard capacity and no values in buffer.
+	   Parameters: None.
+	   Return: StringBuffer object.
 	*/
 	public StringBuffer() {
 		buffer = new char[16];
 		index = 0;
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: Capacity Constructor
+	   Description: Initializes a StringBuffer object with the specified capacity, assuming capacity is valid. Otherwise we set capacity to standard. 
+	   Parameters: int capacity - The requested capacity for the StringBuffer.
+	   Return: StringBuffer object.
 	*/
 	public StringBuffer(int capacity) {
 		if (capacity < 0) capacity = 16;
@@ -30,10 +30,10 @@ public final class StringBuffer extends Object {
 		index = 0;
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: String Constructor
+	   Description: Initializes a StringBuffer object with the specified String. The String's value is copied into the buffer, and the index is set to the next available index in buffer.
+	   Parameters: String str - The specified initial chars to be inserted in buffer.
+	   Return: StringBuffer object.
 	*/
 	public StringBuffer(String str) {
 		buffer = new char[str.length()];
@@ -44,12 +44,21 @@ public final class StringBuffer extends Object {
 		index = i;
 	}
 
-	// **** PRIVATE STRINGBUFFER METHODS ****
-
 	/* Function: 
 	   Description:
 	   Parameters:
 	   Return:
+	*/
+	public StringBuffer(StringBuffer sb) {
+
+	}
+
+	// **** PRIVATE STRINGBUFFER METHODS ****
+
+	/* Function: doubleCapacity 
+	   Description: This is a private function that will double the available capacity of the buffer, if possible. 
+	   Parameters: None.
+	   Return: boolean - The result of attempting to double the buffer size.
 	*/
 	private boolean doubleCapacity() {
 		// Check if length overflows
@@ -58,6 +67,15 @@ public final class StringBuffer extends Object {
 		char[] temp = new char[buffer.length * 2];
 		buffer = temp;
 		return true;
+	}
+
+	/* Function:
+	   Description:
+	   Parameters:
+	   Return:
+	*/
+	private char[] copy(char[] dest) {
+
 	}
 
 	// **** PUBLIC STRINGBUFFER METHODS ****
@@ -413,12 +431,19 @@ public final class StringBuffer extends Object {
 
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: trimToSize
+	   Description: The idea is to trim the buffer capacity down to the size of the actual contents in buffer.
+	   Parameters: None.
+	   Return: None.
 	*/
 	public void trimToSize() {
+		// Create trimmed array skeleton
+		char[] temp = new char[index];
 		
+		// Call private copy function to fill temp with buffer's values
+		temp = copy(temp);
+	
+		// Assign buffer to temp
+		buffer = temp;
 	}
 }
