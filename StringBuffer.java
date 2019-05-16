@@ -75,7 +75,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	private char[] copy(char[] dest) {
-
+		return new char[0];
 	}
 
 	// **** PUBLIC STRINGBUFFER METHODS ****
@@ -86,7 +86,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(boolean b) {
-	
+		return this;
 	}
 
 	/* Function: 
@@ -95,7 +95,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(char c) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -104,7 +104,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(char[] cStr) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -113,7 +113,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(char[] cStr, int offset, int len) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -122,7 +122,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(double d) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -131,7 +131,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(float f) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -140,7 +140,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(int i) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -149,7 +149,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(long l) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -158,7 +158,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(Object obj) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -167,7 +167,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(String str) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -176,7 +176,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer append(StringBuffer sb) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -185,7 +185,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public int capacity() {
-
+		return 0;
 	}
 
 	/* Function: 
@@ -194,7 +194,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public char charAt(int ind) {
-
+		return 0;
 	}
 
 	/* Function: 
@@ -203,7 +203,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer delete(int start, int end) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -212,7 +212,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer deleteCharAt(int ind) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -221,7 +221,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public void ensureCapacity(int minCap) {
-
+		return;
 	}
 
 	/* Function: 
@@ -230,7 +230,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) {
-
+		return;
 	}
 
 	/* Function: 
@@ -239,7 +239,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public int indexOf(String str) {
-
+		return 0;
 	}
 
 	/* Function: 
@@ -248,7 +248,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public int indexOf(String str, int fromIndex) {
-
+		return 0;
 	}
 
 	/* Function: 
@@ -257,7 +257,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, boolean b) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -266,7 +266,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, char c) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -275,7 +275,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, char[] cStr) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -284,7 +284,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int ind, char[] cStr, int offset, int len) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -293,7 +293,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, double d) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -302,7 +302,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, float f) {
-	
+		return this;
 	}
 
 	/* Function: 
@@ -311,7 +311,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, int i) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -320,7 +320,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, long l) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -329,7 +329,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, Object obj) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -338,7 +338,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer insert(int offset, String str) {
-	
+		return this;
 	}
 
 	/* Function: 
@@ -347,7 +347,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public int lastIndexOf(String str) {
-
+		return 0;
 	}
 	
 	/* Function: 
@@ -356,7 +356,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public int lastIndexOf(String str, int fromIndex) {
-
+		return 0;
 	}
 
 	/* Function: 
@@ -365,7 +365,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public int length() {
-	
+		return 0;
 	}
 
 	/* Function: 
@@ -374,7 +374,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer replace(int start, int end, String str) {
-
+		return this;
 	}
 
 	/* Function: 
@@ -383,7 +383,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public StringBuffer reverse() {
-
+		return this;
 	}
 
 	/* Function: 
@@ -392,7 +392,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public void setCharAt(int ind, char c) {
-
+		return;
 	}
 
 	/* Function: 
@@ -401,7 +401,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public void setLength(int newLength) {
-
+		return;
 	}
 
 	/* Function: 
@@ -410,7 +410,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public String subString(int start) {
-
+		return "";
 	}
 
 	/* Function: 
@@ -419,7 +419,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public String subString(int start, int end) {
-
+		return "";
 	}
 
 	/* Function: 
@@ -428,7 +428,7 @@ public final class StringBuffer extends Object {
 	   Return:
 	*/
 	public String toString() {
-
+		return "";
 	}
 
 	/* Function: trimToSize
@@ -445,5 +445,7 @@ public final class StringBuffer extends Object {
 	
 		// Assign buffer to temp
 		buffer = temp;
+	
+		return;
 	}
 }
