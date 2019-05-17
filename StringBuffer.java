@@ -448,4 +448,40 @@ public final class StringBuffer extends Object {
 	
 		return;
 	}
+
+	/* Function: 
+	   Description: 
+	   Parameters: 
+	   Return: 
+	*/
+	public static void main(String[] args) {
+		// TEST NO-ARG CONSTRUCTOR
+		StringBuffer sb1 = new StringBuffer();
+		if (sb1.buffer.length == 16) System.out.println("No-arg constructor size PASS!");
+		else System.out.println("No-arg constructor size FAIL.");
+		if (sb1.index == 0) System.out.println("No-arg constructor index PASS!");
+		else System.out.println("No-arg constructor index FAIL.");
+
+		// TEST CAPACITY CONSTRUCTOR
+		sb1 = new StringBuffer(-1);
+		StringBuffer sb2 = new StringBuffer(9);
+		if (sb1.buffer.length == 16) System.out.println("Capacity constructor invalid size PASS!");
+		else System.out.println("Capacity constructor invalid size FAIL.");
+		if (sb1.index == 0) System.out.println("Capacity constructor invalid-sized index PASS!");
+		else System.out.println("Capacity constructor invalid-sized index FAIL.");
+
+		if (sb2.buffer.length == 9) System.out.println("Capacity constructor valid size PASS!");
+		else System.out.println("Capacity constructor valid size FAIL.");
+		if (sb2.index == 0) System.out.println("Capacity constructor valid-sized index PASS!");
+		else System.out.println("Capacity constructor valid-sized index FAIL.");
+
+		// TEST STRING CONSTRUCTOR
+		sb1 = new StringBuffer("Hello");
+		if (sb1.buffer.length == 5) System.out.println("String constructor size PASS!");
+		else System.out.println("String constructor size FAIL.");
+		if (sb1.index == 5) System.out.println("String constructor index PASS!");
+		else System.out.println("String constructor index FAIL.");
+
+		return;
+	}
 }
