@@ -44,13 +44,19 @@ public final class StringBuffer extends Object {
 		index = i;
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: StringBuffer Constructor
+	   Description: Take an instance of the StringBuffer as our setup for this new instance. Copy the contents and size of the previous StringBuffer object.
+	   Parameters: StringBuffer sb - The instance we want to create a deep-copy of.
+	   Return: StringBuffer object.
 	*/
 	public StringBuffer(StringBuffer sb) {
+		// Make current buffer the size of sb's buffer
+		buffer = new char[sb.buffer.length];
+		
+		// Copy sb's buffer contents into new buffer
+		copy(sb.buffer, buffer, 0, sb.buffer.length, 0, buffer.length);
 
+		// Index will be set through the copy method
 	}
 
 	// **** PRIVATE STRINGBUFFER METHODS ****
@@ -74,8 +80,8 @@ public final class StringBuffer extends Object {
 	   Parameters:
 	   Return:
 	*/
-	private char[] copy(char[] dest) {
-		return new char[0];
+	private void copy(char[] src, char[] dest, int srcBeg, int srcEnd) {
+		return 0;
 	}
 
 	// **** PUBLIC STRINGBUFFER METHODS ****
@@ -441,7 +447,7 @@ public final class StringBuffer extends Object {
 		char[] temp = new char[index];
 		
 		// Call private copy function to fill temp with buffer's values
-		temp = copy(temp);
+		copy(buffer, temp, 0, buffer.length, 0);
 	
 		// Assign buffer to temp
 		buffer = temp;
