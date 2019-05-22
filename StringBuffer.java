@@ -54,9 +54,10 @@ public final class StringBuffer extends Object {
 		buffer = new char[sb.buffer.length];
 		
 		// Copy sb's buffer contents into new buffer
-		copy(sb.buffer, buffer, 0, sb.buffer.length, 0, buffer.length);
+		buffer = copy(sb.buffer, buffer, 0, sb.buffer.length, 0, buffer.length);
 
-		// Index will be set through the copy method
+		// Set index
+		index += sb.buffer.length;
 	}
 
 	// **** PRIVATE STRINGBUFFER METHODS ****
@@ -75,13 +76,21 @@ public final class StringBuffer extends Object {
 		return true;
 	}
 
-	/* Function:
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: copy
+	   Description: This is a private method that will copy from a source array into the destination array.
+	   Parameters: char[] src - The source array we want to copy from.
+		       char[] dest - The array we want to copy into.
+		       int srcBeg - The inclusive beginning of the array we want to start copying from.
+		       int srcEnd - The inclusive ending of the array we want to copy from.
+		       int destBeg - The inclusive beginning of the array we want to copy into.
+		       int destEnd - The inclusive ending of the array we want to copy into.
+	   Return: dest[] - Must get pointer to destination array. 
 	*/
-	private void copy(char[] src, char[] dest, int srcBeg, int srcEnd) {
-		return 0;
+	private char[] copy(char[] src, char[] dest, int srcBeg, int srcEnd, int destBeg, int destEnd) {
+		// Copy over
+		for (srcBeg <= srcEnd; srcBeg++, destBeg++) dest[destBeg] = src[srcBeg];
+
+		return dest;
 	}
 
 	// **** PUBLIC STRINGBUFFER METHODS ****
