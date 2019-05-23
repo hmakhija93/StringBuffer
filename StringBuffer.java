@@ -194,22 +194,34 @@ public final class StringBuffer extends Object {
 		return this;
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: Capacity 
+	   Description: Returns total capacity of the buffer, as it is currently sized.
+	   Parameters: None.
+	   Return: int - The total capacity requested.
 	*/
 	public int capacity() {
-		return 0;
+		return buffer.length;
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: charAt 
+	   Description: Returns the char value located at index "ind".
+	   Parameters: int ind - Index for character requested.
+	   Return: char - The value in the buffer at the requested index.
 	*/
 	public char charAt(int ind) {
-		return 0;
+		// Check ind value
+		if (ind < 0) {
+			System.err.println("Index for char must be greater than or equal to 0.");
+			return 0;
+		}
+
+		// Check if ind is greater than next index
+		if (ind >= index) {
+			System.err.println("Index for char must be less than current size of buffer.");
+			return 0;
+		}
+
+		return buffer[ind];
 	}
 
 	/* Function: 
