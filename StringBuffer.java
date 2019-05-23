@@ -54,10 +54,10 @@ public final class StringBuffer extends Object {
 		buffer = new char[sb.buffer.length];
 		
 		// Copy sb's buffer contents into new buffer
-		buffer = copy(sb.buffer, buffer, 0, sb.buffer.length, 0, buffer.length);
+		buffer = copy(sb.buffer, buffer, 0, sb.buffer.length - 1, 0, buffer.length);
 
 		// Set index
-		index += sb.buffer.length;
+		index = sb.buffer.length;
 	}
 
 	// **** PRIVATE STRINGBUFFER METHODS ****
@@ -72,7 +72,7 @@ public final class StringBuffer extends Object {
 		if (buffer.length * 2 <= buffer.length) return false;
 		
 		char[] temp = new char[buffer.length * 2];
-		buffer = temp;
+		buffer = copy(buffer, temp, 0, buffer.length - 1, 0, buffer.length - 1);
 		return true;
 	}
 
