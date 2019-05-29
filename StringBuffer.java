@@ -39,9 +39,8 @@ public final class StringBuffer extends Object {
 		buffer = new char[str.length()];
 
 		// Declare i outside of the loop to track the next available index
-		int i = 0;
-		for (; i < str.length(); i++) buffer[i] = str.charAt(i);
-		index = i;
+		for (int i = 0; i < str.length(); i++) buffer[i] = str.charAt(i);
+		index = str.length();
 	}
 
 	/* Function: StringBuffer Constructor
@@ -224,12 +223,28 @@ public final class StringBuffer extends Object {
 		return buffer[ind];
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: delete 
+	   Description: This function will delete chars in buffer starting with index "start" and ending with exclusive "end".
+	   Parameters: int start - The starting index for deletion.
+		       int end - The ending index for deletion, exclusive.
+	   Return: StringBuffer - The whole object with the edited buffer.
 	*/
 	public StringBuffer delete(int start, int end) {
+		// Bounds check
+		if (end < start) return this;
+	
+		// If starting is already out of bounds, return this object
+		if (start > buffer.length) {
+			// If end is out of bounds, reduce to actual size of buffer
+			if (buffer.length < end) end = buffer.length;
+
+			char[] temp = new char[buffer.length - (end - start)];
+
+			temp = copy(buffer, temp, 0, start - 1, 0, start - 1);
+			temp = copy(buffer, temp, end, buffer.length, end, temp.length);
+			buffer = temp;
+		}
+
 		return this;
 	}
 
