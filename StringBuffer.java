@@ -248,12 +248,23 @@ public final class StringBuffer extends Object {
 		return this;
 	}
 
-	/* Function: 
-	   Description:
-	   Parameters:
-	   Return:
+	/* Function: deleteCharAt 
+	   Description: Deletes character located at index provided.
+	   Parameters: int ind - Index of character to delete.
+	   Return: StringBuffer object - This object with modified buffer, if index was within bounds.
 	*/
 	public StringBuffer deleteCharAt(int ind) {
+		// Check if given ind is out of bounds of buffer
+		if (ind < 0 || ind >= index) return this;
+
+		// Ind is within bounds
+		char[] temp = new char[buffer.length];
+		temp = copy(buffer, temp, 0, ind, 0, ind);
+		temp = copy(buffer, temp, ind + 1, index, ind, temp.length);
+
+		// Replace buffer with modified buffer
+		buffer = temp;
+		
 		return this;
 	}
 
