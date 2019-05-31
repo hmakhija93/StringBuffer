@@ -87,7 +87,7 @@ public final class StringBuffer extends Object {
 	*/
 	private char[] copy(char[] src, char[] dest, int srcBeg, int srcEnd, int destBeg, int destEnd) {
 		// Copy over
-		for (srcBeg <= srcEnd; srcBeg++, destBeg++) dest[destBeg] = src[srcBeg];
+		for (; srcBeg <= srcEnd; srcBeg++, destBeg++) dest[destBeg] = src[srcBeg];
 
 		return dest;
 	}
@@ -494,7 +494,7 @@ public final class StringBuffer extends Object {
 		char[] temp = new char[index];
 		
 		// Call private copy function to fill temp with buffer's values
-		copy(buffer, temp, 0, buffer.length, 0);
+		copy(buffer, temp, 0, buffer.length, 0, index);
 	
 		// Assign buffer to temp
 		buffer = temp;
@@ -534,6 +534,13 @@ public final class StringBuffer extends Object {
 		else System.out.println("String constructor size FAIL.");
 		if (sb1.index == 5) System.out.println("String constructor index PASS!");
 		else System.out.println("String constructor index FAIL.");
+		
+		// TEST STRINGBUFFER CONSTRUCTOR
+		sb2 = new StringBuffer(sb1);
+		if (sb1.buffer.length == sb2.buffer.length) System.out.println("StringBuffer constructor size PASS!");
+		else System.out.println("StringBuffer constructor size FAIL.");
+		if (sb1.index == sb2.index) System.out.println("StringBuffer constructor index PASS!");
+		else System.out.println("StringBuffer constructor index FAIL.");		
 
 		return;
 	}
