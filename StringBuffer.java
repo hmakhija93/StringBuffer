@@ -37,8 +37,6 @@ public final class StringBuffer extends Object {
 	*/
 	public StringBuffer(String str) {
 		buffer = new char[str.length()];
-
-		// Declare i outside of the loop to track the next available index
 		for (int i = 0; i < str.length(); i++) buffer[i] = str.charAt(i);
 		index = str.length();
 	}
@@ -56,7 +54,26 @@ public final class StringBuffer extends Object {
 		buffer = copy(sb.buffer, buffer, 0, sb.buffer.length - 1, 0, buffer.length);
 
 		// Set index
-		index = sb.buffer.length;
+		index = sb.index;
+	}
+
+	// **** GETTERS ****
+	/* Function: getIndex
+	   Description: To give access to outside classes without allowing mutation of the data.
+  	   Parameters: None.
+   	   Return: int index - The index of the next available space in the buffer.
+	*/
+	public int getIndex() {
+		return index;
+	}
+
+	/* Function: getBuffer
+	   Description: To give access to outside classes without allowing mutation of the data.
+  	   Parameters: None.
+   	   Return: char[] - The buffer stored in this StringBuffer object.
+	*/
+	public char[] getBuffer() {
+		return buffer;
 	}
 
 	// **** PRIVATE STRINGBUFFER METHODS ****
