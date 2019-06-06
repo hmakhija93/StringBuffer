@@ -48,13 +48,13 @@ public final class StringBuffer extends Object {
 	*/
 	public StringBuffer(StringBuffer sb) {
 		// Make current buffer the size of sb's buffer
-		buffer = new char[sb.buffer.length];
+		buffer = new char[sb.getBuffer().length];
 		
 		// Copy sb's buffer contents into new buffer
-		buffer = copy(sb.buffer, buffer, 0, sb.buffer.length - 1, 0, buffer.length);
+		buffer = copy(sb.getBuffer(), buffer, 0, sb.getBuffer().length - 1, 0, buffer.length);
 
 		// Set index
-		index = sb.index;
+		index = sb.getIndex();
 	}
 
 	// **** GETTERS ****
@@ -511,7 +511,7 @@ public final class StringBuffer extends Object {
 		char[] temp = new char[index];
 		
 		// Call private copy function to fill temp with buffer's values
-		copy(buffer, temp, 0, buffer.length, 0, index);
+		temp = copy(buffer, temp, 0, buffer.length, 0, index);
 	
 		// Assign buffer to temp
 		buffer = temp;
